@@ -1,26 +1,24 @@
 import React, {useState} from 'react';
 import '../css/CphBusinessExercise.css';
+import DefaultInput from './DefaultInput';
 
 const CphBusinessExercise = () => {
 
-    const [name, setName] = useState(undefined);
-    const [age, setAge] = useState(undefined);
-
-    const handleNameChange = (event) => {
-        console.log('Name', event.target.value);
-    }
-
-    const handleAgeChange = (event) => {
-        console.log('Age', event.target.value);
-    }
+    const [name, setName] = useState('');
+    const [age, setAge] = useState('');
 
     return (
         <div className={'exercise-container'}>
-            <label>Name: </label>
-            <input value={name} onChange={handleNameChange}/>
-
-            <label>Age: </label>
-            <input value={age} onChange={handleAgeChange}/>
+            <DefaultInput
+                label={'Name'}
+                value={name}
+                setValue={setName}
+            />
+            <DefaultInput
+                label={'Age'}
+                value={age}
+                setValue={setAge}
+            />
         </div>
     );
 }
